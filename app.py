@@ -214,15 +214,19 @@ def main():
         st.subheader("Generated Features")
 
         summary = pd.DataFrame({
-            "Feature": ["BMI", "Pulse Pressure", "Mean Arterial Pressure", "Blood Pressure Stage"],
+            "Feature": [
+                "BMI",
+                "Pulse Pressure",
+                "Mean Arterial Pressure",
+                "Blood Pressure Stage"
+            ],
             "Value": [
-                round(bmi,2),
-                ap_hi-ap_lo,
-                round(ap_lo+(ap_hi-ap_lo)/3,2),
+                f"{bmi:.2f}",
+                f"{ap_hi - ap_lo} mmHg",
+                f"{ap_lo + (ap_hi - ap_lo) / 3:.2f} mmHg",
                 BP_STAGE_LABELS[bp_stage]
             ]
         })
-
         st.table(summary)
 
 
