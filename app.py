@@ -196,6 +196,7 @@ def render_ps_item(label: str, value: str):
 
 
 def main():
+    st.title("")
     st.title("🫀 Cardiovascular Disease Risk Calculator")
     st.markdown(
         """
